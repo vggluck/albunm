@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EchoZero | Music Label</title>
+    <title>EchoZero | Official Label</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap');
 
@@ -13,72 +13,82 @@
             font-family: 'Roboto Mono', monospace;
             margin: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 800px;
-            text-align: center;
-            padding: 40px 20px;
+            max-width: 1000px;
+            display: flex; /* Сетка для лого и текста */
+            align-items: flex-start;
+            gap: 40px;
+            padding: 40px;
             border: 2px solid #00fbff;
             box-shadow: 0 0 20px rgba(0, 251, 255, 0.2);
+            background: rgba(0, 0, 0, 0.9);
             margin: 20px;
-            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .logo-side {
+            flex: 0 0 300px; /* Фиксированная ширина для лого */
+        }
+
+        .logo-side img {
+            width: 100%;
+            border: 1px solid #00fbff;
+            display: block;
+        }
+
+        .content-side {
+            flex: 1;
+            text-align: left;
         }
 
         .logo-font {
             font-family: 'Press Start 2P', cursive;
             color: #00fbff;
-            font-size: 2.5rem;
-            text-shadow: 3px 3px #ff00ff;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px #ff00ff;
         }
 
         .wave {
             width: 100%;
-            height: 60px;
+            height: 40px;
             background: linear-gradient(90deg, transparent 0%, #00fbff 50%, transparent 100%);
             mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0 10 Q 5 0, 10 10 T 20 10 T 30 10 T 40 10 T 50 10 T 60 10 T 70 10 T 80 10 T 90 10 T 100 10" stroke="black" fill="transparent" stroke-width="2"/></svg>');
-            opacity: 0.6;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
 
         h2 {
             color: #00fbff;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
             border-bottom: 1px solid #333;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
         }
 
         p {
             line-height: 1.6;
-            font-size: 1.1rem;
             color: #ccc;
-            text-align: justify;
+            margin-bottom: 15px;
         }
 
-        .bio-section {
-            margin-top: 40px;
-            text-align: left;
+        strong {
+            color: #fff;
         }
 
         .btn-upload {
             display: inline-block;
-            margin-top: 50px;
-            padding: 15px 30px;
+            margin-top: 20px;
+            padding: 12px 24px;
             font-family: 'Press Start 2P', cursive;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #000;
             background-color: #00fbff;
             text-decoration: none;
-            border: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            transition: 0.2s;
             box-shadow: 4px 4px 0px #ff00ff;
         }
 
@@ -91,45 +101,55 @@
 
         .footer {
             margin-top: 30px;
-            font-size: 0.8rem;
-            color: #555;
+            font-size: 0.7rem;
+            color: #444;
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; align-items: center; text-align: center; }
+            .content-side { text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="logo-font">EchoZero</div>
-        <div class="wave"></div>
-        
-        <section class="description">
-            <p>
-                <strong>EchoZero</strong> — это независимый музыкальный лейбл нового поколения, 
-                объединяющий цифровую эстетику и бескомпромиссный звук. Мы верим в силу 
-                "нулевого резонанса" — момента, когда музыка становится чистой энергией.
-            </p>
-        </section>
+        <div class="logo-side">
+            <img src="EchoZero.jpeg" alt="EchoZero Logo">
+        </div>
 
-        <section class="bio-section">
-            <h2>Биография лейбла</h2>
-            <p>
-                История <strong>EchoZero</strong> началась в 2024 году. Идея создания площадки, 
-                которая стерла бы границы между независимыми разработчиками и музыкантами, 
-                зародилась как эксперимент внутри экосистемы <strong>Invizible Corp</strong>. 
-            </p>
-            <p>
-                Весь 2024 и 2025 годы лейбл находился в стадии закрытого планирования. 
-                Мы разрабатывали инфраструктуру, которая позволила бы артистам сохранять 
-                полный контроль над своим творчеством, обеспечивая при этом мировой уровень 
-                дистрибуции. В 2026 году EchoZero официально вышел из тени, став домом для 
-                проектов уровня <strong>HelloREMAKE</strong>.
-            </p>
-        </section>
+        <div class="content-side">
+            <div class="logo-font">EchoZero</div>
+            <div class="wave"></div>
+            
+            <section class="description">
+                <p>
+                    <strong>EchoZero</strong> — это независимый музыкальный лейбл нового поколения, 
+                    объединяющий цифровую эстетику и бескомпромиссный звук. Мы верим в силу 
+                    "нулевого резонанса" — момента, когда музыка становится чистой энергией.
+                </p>
+            </section>
 
-        <a href="/upld" class="btn-upload">ОТПРАВИТЬ СВОЙ ПЕРВЫЙ РЕЛИЗ</a>
-        
-        <div class="footer">
-            © 2024 - 2026 EchoZero Music. Все права защищены.
+            <section class="bio-section">
+                <h2>Биография лейбла</h2>
+                <p>
+                    История <strong>EchoZero</strong> началась в 2024 году. Идея создания площадки, 
+                    которая стерла бы границы между независимыми разработчиками и музыкантами, 
+                    зародилась как эксперимент внутри экосистемы <strong>IIP-DDS (FUGA)</strong>, а изначальным автором являлась 
+                    <strong>Boom Music Label</strong> (нынешний <strong>EchoZero Official</strong>).
+                </p>
+                <p>
+                    Весь 2024 и 2025 годы лейбл находился в стадии закрытого планирования. 
+                    В 2026 году EchoZero официально вышел из тени, став домом для 
+                    проектов уровня <strong>MONTAGEM MIRA, KRISIC, CHIMPANZINI BANANINI FUNK</strong> и других. [cite: 2026-03-02]
+                </p>
+            </section>
+
+            <a href="/upld" class="btn-upload">ОТПРАВИТЬ СВОЙ ПЕРВЫЙ РЕЛИЗ</a>
+            
+            <div class="footer">
+                © 2024 - 2026 EchoZero Music. Все права защищены.
+            </div>
         </div>
     </div>
 
