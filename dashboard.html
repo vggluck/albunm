@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOXLINK | DASHBOARD</title>
+    <style>
+        body { background: #fff; color: #000; font-family: 'Inter', sans-serif; margin: 0; padding: 40px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        /* Стили для регистрации */
+        #auth-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80vh; }
+        .auth-card { background: #f9f9f9; padding: 40px; border-radius: 20px; border: 1px solid #eee; text-align: center; width: 100%; max-width: 400px; }
+        h2 { font-weight: 900; font-size: 32px; margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #ddd; box-sizing: border-box; }
+        
+        /* Кнопки */
+        .btn-black { background: #000; color: #fff; border: none; padding: 15px 30px; border-radius: 12px; font-weight: 800; cursor: pointer; width: 100%; transition: 0.2s; }
+        .btn-black:hover { opacity: 0.8; }
+        .btn-create { background: #000; color: #fff; text-decoration: none; padding: 12px 25px; border-radius: 10px; font-weight: 700; display: inline-block; margin-bottom: 30px; }
+
+        /* Сетка смартлинков */
+        #dash-screen { display: none; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+        
+        /* Карточка смартлинка */
+        .link-card { background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .link-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+        .card-info { padding: 15px; }
+        .card-title { font-weight: 800; margin: 0; font-size: 18px; }
+        .card-slug { color: #888; font-size: 14px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="auth-screen">
+            <div class="auth-card">
+                <h2>FOXLINK ВХОД</h2>
+                <input type="text" id="username" placeholder="Логин">
+                <input type="password" id="password" placeholder="Пароль">
+                <button class="btn-black" onclick="login()">ВОЙТИ / РЕГИСТРАЦИЯ</button>
+            </div>
+        </div>
+
+        <div id="dash-screen">
+            <div class="header">
+                <h2>МОИ СМАРТЛИНКИ</h2>
+                <div id="user-display" style="font-weight: 600;"></div>
+            </div>
+
+            <a href="/create" class="btn-create">+ СОЗДАТЬ НОВЫЙ</a>
+
+            <div class="grid" id="links-grid">
+                <div class="link-card">
+                    <img src="placeholder.jpg" class="card-img">
+                    <div class="card-info">
+                        <p class="card-title">Звезда X Цены</p>
+                        <p class="card-slug">a.album.v6.navy/link/starxprice</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const user = document.getElementById('username').value;
+            if(user) {
+                document.getElementById('auth-screen').style.display = 'none';
+                document.getElementById('dash-screen').style.display = 'block';
+                document.getElementById('user-display').innerText = `ПРИВЕТ, ${user.toUpperCase()}`;
+                loadUserLinks();
+            }
+        }
+
+        async function loadUserLinks() {
+            // Тут будет fetch запрос к твоему воркеру
+            // const res = await fetch('/api/my-links');
+            // const data = await res.json();
+            // ... рендер карточек
+        }
+    </script>
+</body>
+</html>
